@@ -5,9 +5,9 @@ import json
 
 api_form = Blueprint('form', __name__)
 
-@api_form.get("/teste")
+@api_form.get("/")
 def test():
-    return 'oi'
+    return jsonify({"menssage":"good"}),200
 
 @api_form.post("/form/register")
 def register(): 
