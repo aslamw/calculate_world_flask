@@ -15,11 +15,9 @@ class Form(db.Model):
     form = db.Column(db.String, nullable=False, unique=True)
     date_create = db.Column(db.DateTime, default=datetime.datetime.now())
     
-    def __init__(self, name, form, date_update= None, date_delete=None):
+    def __init__(self, name, form):
         self.name = name
         self.form = form
-        self.date_update = date_update
-        self.date_delete = date_delete
     
 class FormSchema(ma.Schema):
     class Meta:

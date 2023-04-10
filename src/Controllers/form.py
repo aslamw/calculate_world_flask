@@ -49,10 +49,9 @@ def form_delete(id):
 def form_by_name(key,name):
     try:
         form = False
-        match key:
-            case "name":
+        if key == "name":
                 form = Form.query.filter(Form.name == name).one()
-            case "form":
+        elif key == "form":
                 form = Form.query.filter(Form.form == name).one()
         db.session.commit()
         
